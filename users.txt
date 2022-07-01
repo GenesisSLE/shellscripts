@@ -1,0 +1,10 @@
+admin
+pwdadmin
+profesor
+pwdprofesor
+alumno
+pwdalumno
+adscripto
+pwdadscripto
+super
+
