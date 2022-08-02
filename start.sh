@@ -10,13 +10,13 @@ echo "Ingresa una opción
 	2) ABM de grupo"
 read -p "Ingresa una opción: " op
 
-	if [ $op -eq 1 ];
+	if [ $op -eq 1 ]
 	then
 	continuar=2
 	./ABMu.sh
 	fi
 
-	if [ $op -eq 2 ];
+	if [ $op -eq 2 ]
 	then
 	continuar=2
 	./ABMg.sh

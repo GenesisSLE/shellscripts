@@ -8,7 +8,8 @@ do
 read -p "Selecciona una opcion
 1) Agregar usuario
 2) Eliminar usuario
-10) Salir " op
+3) Modificar usuario (WIP)
+4) Atras " op
 	if [ $op -eq 1 ];
 	then
 	continuar=2
@@ -21,7 +22,7 @@ read -p "Selecciona una opcion
 	./userdel.sh
 	fi
 
-	if [ $op -eq 10 ];
+	if [ $op -eq 4 ];
 	then
 	continuar=2
 	./start.sh
