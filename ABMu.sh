@@ -27,4 +27,5 @@ read -p "Selecciona una opcion
 	continuar=2
 	./start.sh
 	fi
+clear
 done

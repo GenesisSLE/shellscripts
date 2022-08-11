@@ -21,4 +21,5 @@ read -p "Ingresa una opción: " op
 	continuar=2
 	./ABMg.sh
 	fi
+clear
 done

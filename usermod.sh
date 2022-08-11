@@ -1,5 +1,9 @@
 #!/bin/bash
+continuar=1
+grupos=0
 
+while [ $continuar -eq 1 ]
+do
 read -p "Ingresa un usuario: " usr
 read -p "Usuario $usr:
 	1) Cambiar login de usuario
@@ -18,41 +22,47 @@ then
 	read -p "Ingresa el nuevo login de usuario" login
 	usermod -l $login $usr
 	echo "Nuevo login"
-	
+	continuar=2
 fi
 
 if [ $op -eq 2 ]
 then
 	usermod -L $usr
+	continuar=2
 fi
 
 if [ $op -eq 3 ]
 then
 	usermod -U $usr
+	continuar=2
 fi
 
 if [ $op -eq 4 ]
 then
 	read -p "Ingresa un comentario: " commit
 	usermod -c $commit $usr
+	continuar=2
 fi
 
 if [ $op -eq 5 ]
 then
 	read -p "Ingresa la ruta del directorio home  EJ:/home/USUARIO/ : " home
 	usermod -d $home $usr
+	continuar=2
 fi
 
 if [ $op -eq 6 ]
 then
 	read -p "Ingresa la ruta del directorio home donde se va a mover : " mvhome
 	usermod -m -d $mvhome $usr
+	continuar=2
 fi
 
 if [ $op -eq 7 ]
 then
 	read -p "ingresa la expiración del usuario " fecha
 	usermod -e $fecha $usr
+	continuar=2
 fi
 
 #Desde acá en adelante ni idea como estructurar esto hoy, tengo sueño
@@ -71,7 +81,10 @@ fi
 #Posiblemente esto no funca y creashea todo al carajo
 if [ $op -eq 10 ]
 then
-	usermod -a -G $grupos $usr
+	if [ $grupos -eq 3 ]
+	then
+		usermod -a -G $grupos $usr
+	fi
 fi
 
 done
