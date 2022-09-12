@@ -78,7 +78,7 @@ then
 	usermod -G $grupo2 $usr
 fi
 
-#Posiblemente esto no funca y creashea todo al carajo
+#Posiblemente esto no funca y crashea todo al carajo
 if [ $op -eq 10 ]
 then
 	if [ $grupos -eq 3 ]

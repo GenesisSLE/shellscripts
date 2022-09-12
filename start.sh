@@ -7,7 +7,9 @@ while [ $continuar -eq 1 ]
 do
 echo "Ingresa una opción
 	1) ABM de usuario
-	2) ABM de grupo"
+	2) ABM de grupo
+	3) Test de conexión a internet
+	4) Actualizar sistema"
 read -p "Ingresa una opción: " op
 
 	if [ $op -eq 1 ]
@@ -20,6 +22,16 @@ read -p "Ingresa una opción: " op
 	then
 	continuar=2
 	./ABMg.sh
+	fi
+	
+	if [ $op -eq 3 ]
+	then
+	./testinternet.sh
+	fi
+
+	if [ $op -eq 4 ]
+	then
+	./apt.sh
 	fi
 clear
 done
