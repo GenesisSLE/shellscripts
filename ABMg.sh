@@ -21,7 +21,7 @@ read -p "Selecciona una opcion
 	./groupdel.sh
 	fi
 
-	if [ $op -eq 4 ]
+	if [ $op -eq 3 ]
 	then
 	continuar=2
 	./start.sh
