@@ -5,7 +5,7 @@ clear
 
 read -p "Ingresa un nombre: " op
 
-read -p "Quieres ingresar a un grupo? [y/n] " yn 
+read -p "Quieres ingresar a un grupo? [y/n] " yn
 
 if [ "$yn" = "y" ]
 then
@@ -38,7 +38,7 @@ passwd $op
 
 if [ "$yn" = "y" ]
 then
-usermod -a -G $op2 $op
+usermod -aG $op2 $op
 fi
 
 if [ "$syn1" = "y" ]
