@@ -8,8 +8,7 @@ do
 read -p "Selecciona una opcion
 1) Agregar grupo
 2) Eliminar grupo
-3) Modificar grupo (WIP)
-4) Atras " op
+3) Atras " op
 	if [ $op -eq 1 ]
 	then
 	continuar=2
