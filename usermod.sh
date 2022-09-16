@@ -15,7 +15,9 @@ read -p "Usuario $usr:
 	7) Establecer/Cambiar fecha de expiración de usuario
 	8) Reemplazar grupo primario de usuario
 	9) Reemplazar grupos secundarios de usuario
-	10) Agregar usuario a grupos" op
+	10) Agregar usuario a grupos secundarios $grupos / 3
+	11) Volver al menú de usuarios
+	12) Volver al menú principal" op
 
 if [ $op -eq 1 ]
 then
@@ -65,7 +67,6 @@ then
 	continuar=2
 fi
 
-#Desde acá en adelante ni idea como estructurar esto hoy, tengo sueño
 if [ $op -eq 8 ]
 then
 	read -p "Ingresa un grupo " grupo1
@@ -78,13 +79,24 @@ then
 	usermod -G $grupo2 $usr
 fi
 
-#Posiblemente esto no funca y crashea todo al carajo
 if [ $op -eq 10 ]
 then
-	if [ $grupos -eq 3 ]
+	if [ $grupos -lt 3 ]
 	then
 		usermod -a -G $grupos $usr
+	else
+		echo "No puedes agregar más grupos secundarios!"
 	fi
+fi
+
+if [ $op -eq 11 ]
+then
+	./ABMu.sh
+fi
+
+if [ $op -eq 12 ]
+then
+	./start.sh
 fi
 
 done

@@ -23,7 +23,7 @@ read -p "Ingresa una opción: " op
 	continuar=2
 	./ABMg.sh
 	fi
-	
+
 	if [ $op -eq 3 ]
 	then
 	./testinternet.sh
