@@ -3,7 +3,7 @@
 continuar=1
 clear
 
-while [ $continuar -eq 1]
+while [ $continuar -eq 1 ]
 do
 read -p "Selecciona una opcion
 1) Agregar grupo
