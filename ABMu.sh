@@ -9,7 +9,7 @@ read -p "Selecciona una opcion
 1) Agregar usuario
 2) Eliminar usuario
 3) Modificar usuario
-4) Atras " op
+4) Volver al menú principal " op
 	if [ $op -eq 1 ]
 	then
 	continuar=2

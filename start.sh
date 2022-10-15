@@ -9,7 +9,8 @@ echo "Ingresa una opción
 	1) ABM de usuario
 	2) ABM de grupo
 	3) Test de conexión a internet
-	4) Actualizar sistema"
+	4) Actualizar sistema
+	5) Salir del programa"
 read -p "Ingresa una opción: " op
 
 	if [ $op -eq 1 ]
@@ -32,6 +33,12 @@ read -p "Ingresa una opción: " op
 	if [ $op -eq 4 ]
 	then
 	./apt.sh
+	fi
+
+	if [ $op -eq 5 ]
+	then
+	clear
+	exit 0
 	fi
 clear
 done
