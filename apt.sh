@@ -2,5 +2,6 @@
 
 clear
 sudo apt update
-clear
 sudo apt upgrade
+echo "Sistema actualizado correctamente!"
+sleep 5
