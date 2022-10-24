@@ -8,18 +8,20 @@ op=0
 read -p "Selecciona una opción
 	1) Iniciar
 	2) Detener
-	3) Reiniciar" op1
+	3) Reiniciar
+	4) Comprobar estado de servicios
+	5) Menú principal :" op1
 
 if [ $op1 -eq 1 ]
 then
 read -p "Selecciona que servicios quieres iniciar
         1) Web (Apache)
         2) FTP
-        3) MySQL" op
+        3) MySQL :" op
 
 	if [ $op -eq 3 ]
 	then
-        	sudo systemctl start mysql-server
+        	sudo systemctl start mysql
         	echo "MySQL iniciado correctamente"
 	fi
 
@@ -41,11 +43,11 @@ then
 read -p "Selecciona que servicios quieres detener
         1) Web (Apache)
         2) FTP
-        3) MySQL" op
+        3) MySQL :" op
 
         if [ $op -eq 3 ]
         then
-                sudo systemctl stop mysql-server
+                sudo systemctl stop mysql
                 echo "MySQL detenido correctamente"
         fi
 
@@ -67,11 +69,11 @@ then
 read -p "Selecciona que servicios quieres reiniciar
 	1) Web (Apache)
 	2) FTP
-	3) MySQL" op
+	3) MySQL :" op
 
 	if [ $op -eq 3 ]
 	then
-		sudo systemctl restart mysql-server
+		sudo systemctl restart mysql
 		echo "MySQL reinciado correctamente"
 	fi
 
@@ -87,5 +89,38 @@ read -p "Selecciona que servicios quieres reiniciar
 		echo "Apache reinciado correctamente"
 	fi
 
+fi
+
+if [ $op1 -eq 4 ]
+then
+read -p "Selecciona que servicios quieres comprobar su estado
+        1) Web (Apache)
+        2) FTP
+        3) MySQL :" op
+
+        if [ $op -eq 3 ]
+        then
+                sudo systemctl status mysql
+                echo "MySQL reinciado correctamente"
+        fi
+
+        if [ $op -eq 2 ]
+        then
+                sudo systemctl status vsftpd
+                echo "FTP reinicado correctamente"
+        fi
+
+        if [ $op -eq 1 ]
+        then
+                sudo systemctl status apache2
+                echo "Apache reinciado correctamente"
+        fi
+
+fi
+
+if [ $op1 -eq 5 ]
+then
+	continuar=1
+	./start.sh
 fi
 done

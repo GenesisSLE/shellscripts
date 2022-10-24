@@ -12,7 +12,8 @@ echo "Ingresa una opción
 	4) Actualizar sistema
 	5) Comprobar existencia de usuarios en la base de datos
 	6) Administrar servicios
-	7) Salir del programa"
+	7) Usuarios conectados al servidor
+	8) Salir del programa"
 
 read -p "Ingresa una opción: " op
 
@@ -49,6 +50,11 @@ read -p "Ingresa una opción: " op
 	fi
 
 	if [ $op -eq 7 ]
+	then
+		./conn_usuarios.sh
+	fi
+
+	if [ $op -eq 8 ]
 	then
 		clear
 		exit 0
