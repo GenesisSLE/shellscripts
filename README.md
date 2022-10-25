@@ -1,2 +1,2 @@
 # shellscripts
-Para pasar scripts
+Repositorio para shellscripts del servidor

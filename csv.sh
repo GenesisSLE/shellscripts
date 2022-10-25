@@ -3,13 +3,13 @@ op=0
 while [ $op -eq 0 ]
 do
 clear
-read -p "Ingresa la ruta del archivo CSV" ruta 
+read -p "Ingresa la ruta del archivo CSV" ruta
 
 if [[ -z $ruta ]]
 then
 	op=1
 elif [[ -f $ruta ]]
-then 
+then
 	clear
 	cat $ruta | column -s "," -t
 
@@ -18,13 +18,13 @@ while [[ $op -eq 0 ]]
 do
 	read -p "Quieres ingresar los datos?
 		 1: Si
-	 	2: No" oop
+	 	 2: No" oop
 if [[ -z $oop ]]
-then 
+then
 	oop=0
 
 elif [[ $oop -eq 1 ]]
-then 
+then
 	head -1 $ruta > .scripts/Columnas.txt
 	numli=`wc -l $ruta | cut -f1 -d " "`
 	sed 's/,/","/g' $ruta > .scripts/Datos.txt
