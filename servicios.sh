@@ -22,18 +22,21 @@ read -p "Selecciona que servicios quieres iniciar
 	if [ $op -eq 3 ]
 	then
         	sudo systemctl start mysql
+		sudo systemctl status mysql
         	echo "MySQL iniciado correctamente"
 	fi
 
 	if [ $op -eq 2 ]
 	then
         	sudo systemctl start vsftpd
-        	echo "FTP reinicado correctamente"
+		sudo systemctl status vsftpd
+        	echo "FTP inicado correctamente"
 	fi
 
 	if [ $op -eq 1 ]
 	then
         	sudo systemctl start apache2
+		sudo systemctl status apache2
         	echo "Apache inciado correctamente"
 	fi
 fi
@@ -48,18 +51,21 @@ read -p "Selecciona que servicios quieres detener
         if [ $op -eq 3 ]
         then
                 sudo systemctl stop mysql
+		sudo systemctl status mysql
                 echo "MySQL detenido correctamente"
         fi
 
         if [ $op -eq 2 ]
         then
                 sudo systemctl stop vsftpd
+		sudo systemctl status vsftpd
                 echo "FTP detenido correctamente"
         fi
 
         if [ $op -eq 1 ]
         then
                 sudo systemctl stop apache2
+		sudo systemctl status apache2
                 echo "Apache detenido correctamente"
         fi
 fi
@@ -74,18 +80,21 @@ read -p "Selecciona que servicios quieres reiniciar
 	if [ $op -eq 3 ]
 	then
 		sudo systemctl restart mysql
+		sudo systemctl status mysql
 		echo "MySQL reinciado correctamente"
 	fi
 
 	if [ $op -eq 2 ]
 	then
 		sudo systemctl restart vsftpd
+		sudo systemctl status vsftpd
 		echo "FTP reinicado correctamente"
 	fi
 
 	if [ $op -eq 1 ]
 	then
 		sudo systemctl restart apache2
+		sudo systemctl status apache2
 		echo "Apache reinciado correctamente"
 	fi
 
