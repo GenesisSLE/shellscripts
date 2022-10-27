@@ -27,12 +27,12 @@ elif [[ $oop -eq 1 ]]
 then
 	head -1 $ruta > .scripts/Columnas.txt
 	numli=`wc -l $ruta | cut -f1 -d " "`
-	sed 's/,/","/g' $ruta > .scripts/Datos.txt
+	sed 's/,/","/g' $ruta > .scripts/datos.txt
 	e=2
 while [ $e -le $numli ]
 do
-	Tablas=`cat .scripts/Columnas.txt`
-	Datos=`head -$e .scripts/Datos.txt | tail -1`
+	Tablas=`cat .scripts/columnas.txt`
+	Datos=`head -$e .scripts/datos.txt | tail -1`
 	Datos='"'$Datos'"'
 		mysql -u genesis -pgenesis -e "use genesis_sle;insert into Persona($Tablas) values ($Datos);"
 	e=`expr $e + 1`

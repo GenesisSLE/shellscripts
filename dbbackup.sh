@@ -1,3 +1,5 @@
 #!/bin/bash
 fecha=$(date +"%d_%m_%Y")
-mysql -u genesis -p genesis_sle > backup/backup.sql
+mysqldump -u genesis -pgenesis genesis_sle > backup_$fecha.sql
+
+echo Base de datos exportada como backup_$fecha.sql
