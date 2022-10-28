@@ -3,7 +3,7 @@ clear
 continuar=1
 while [ $continuar -eq 1 ]
 do
-read -p "Ingresa un dia" dia
+read -p "Ingresa un dia " dia
 
 if [ $dia -ge 1 ]
 then
@@ -28,6 +28,7 @@ then
         ./reuniones.sh
 fi
 
+read -p "Ingresa un mes " mes
 if [ $mes -ge 1 ]
 then
 	if [ $mes -le 12 ]
@@ -51,6 +52,7 @@ then
 	./reuniones.sh
 fi
 
+read -p "Ingresa un año " year
 if [ $year -ge 2020 ]
 then
 	if [ $year -le 2099 ]
@@ -74,6 +76,7 @@ then
         ./reuniones.sh
 fi
 
+read -p "Ingresa una hora " hora
 if [ $hora -ge 00 ]
 then
 	if [ $hora -le 23 ]
@@ -97,6 +100,7 @@ then
         ./reuniones.sh
 fi
 
+read -p "Ingresa el/los minuto/s " minutos
 if [ $minutos -ge 00 ]
 then
 	if [ $minutos -le 59 ]
@@ -120,6 +124,7 @@ then
         ./reuniones.sh
 fi
 
+read -p "Ingresa el/los segundo/s " segundos
 if [ $segundos -ge 00 ]
 then
 	if [ $segundos -le 59 ]
