@@ -79,7 +79,7 @@ fi
 read -p "Ingresa una hora " hora
 if [ $hora -ge 00 ]
 then
-	if [ $hora -le 23 ]
+	if [ $hora -le 12 ]
 	then
         	read -p "Estás seguro? [y/n] " yn3
         	if [ "$yn3" = "y" ]
@@ -92,10 +92,10 @@ then
                 	./reuniones.sh
         	fi
 	fi
-elif [ $hora -gt 23 ]
+elif [ $hora -gt 12 ]
 then
         hora=
-        echo "No se puede agregar una hora mayor a 23 ya que no existe"
+        echo "No se puede agregar una hora mayor a 12 ya que no existe"
         sleep 5
         ./reuniones.sh
 fi
@@ -142,18 +142,21 @@ then
 	fi
 elif [ $segundos -gt 59 ]
 then
-        hora=
+        segundos=
         echo "No se puede agregar mas de 59 segundos ya que no existen"
         sleep 5
         ./reuniones.sh
 fi
-fecha=$year-$mes-$dia $hora:$minutos:$segundos
-echo "Establece una id de grupo " id
+fecha="$year-$mes-$dia"
+hora="$hora:$minutos:$segundos"
+echo $fecha
+echo $hora
+read -p "Establece una id de grupo " id
 if [ $id -ge 1 ]
 then
-	if [$id -le 3 ]
+	if [ $id -le 3 ]
 	then
-	mysql -u genesis -pgenesis -e "USE genesis_sle; insert into Reunion (numReun) values ("$num");"
+	mysql -u genesis -pgenesis -e "USE genesis_sle; insert into reunion (numReun) values ("$id");"
 	fi
 elif [ $id -ge 3 ]
 then
@@ -162,15 +165,17 @@ then
 	./reuniones.sh
 fi
 
-echo "Ingresa un num de reunión " num
+read -p "Ingresa un num de reunión " num
 if [ ! -z $num ]
 then
-	mysql -u genesis -pgenesis -e "USE genesis_sle; insert into Emite (idReunion, idGrupo, fecha) values ((select MAX(idReunion) from Reunion), "$num", "$fecha");"
+	mysql -u genesis -pgenesis -e "USE genesis_sle; insert into emite (idReunion, idGrupo, fecha) values ((select MAX(idReunion) from reunion), '$num', '$fecha $hora');"
 	mysql -u genesis -pgenesis -e "USE genesis_sle; SELECT * from emite"
 elif [ -z $num ]
 then
 echo "No se ingresó una id de reunión"
 fi
 echo "Regresando al menú principal en 10 segundos..."
+continuar=1
 sleep 10
+./start.sh
 done

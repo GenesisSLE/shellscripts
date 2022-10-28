@@ -19,7 +19,7 @@ echo "Ingresa una opción
 	11) Mostrar inasistencias de docentes por grupo
 	12) Mostrar login de usuarios en la app web
 	13) Mostrar promedio de materias por cada curso
-	14) Mostrar reuniones
+	14) Dar de alta reuniones
 	15) Definir respaldo manualmente
 	16) Salir del programa: "
 
