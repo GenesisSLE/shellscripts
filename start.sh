@@ -20,7 +20,8 @@ echo "Ingresa una opción
 	12) Mostrar login de usuarios en la app web
 	13) Mostrar promedio de materias por cada curso
 	14) Mostrar reuniones
-	15) Salir del programa"
+	15) Definir respaldo manualmente
+	16) Salir del programa: "
 
 read -p "Ingresa una opción: " op
 
@@ -97,6 +98,12 @@ read -p "Ingresa una opción: " op
         fi
 
 	if [ $op -eq 15 ]
+	then
+		continuar=2
+		./prog_backup.sh
+	fi
+
+	if [ $op -eq 16 ]
 	then
 		clear
 		exit 0
