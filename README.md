@@ -1,2 +1,2 @@
-# SLE-SO
-Para pasar scripts
+# shellscripts
+Repositorio para shellscripts del servidor

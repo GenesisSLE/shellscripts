@@ -2,5 +2,7 @@
 
 clear
 sudo apt update
-clear
 sudo apt upgrade
+echo "Sistema actualizado correctamente!"
+echo "Regresando al menú principal en 5 segundos..."
+sleep 5
